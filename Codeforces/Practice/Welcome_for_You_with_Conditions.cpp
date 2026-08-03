@@ -2,7 +2,7 @@
 using namespace std;
 
 void solution(){
-        int a, b;
+     int a, b;
     cin>> a >> b;
  
     if(a >= b){

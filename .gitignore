@@ -1,0 +1,14 @@
+# Compiled executables
+*.exe
+*.out
+*.o
+*.obj
+
+# Build output folder
+output/
+
+# VS Code cache
+.vscode/ipch/
+
+# Windows
+Thumbs.db
