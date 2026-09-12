@@ -15,23 +15,7 @@ void solution(){
         while(count < k){
             number++;
 
-            if(number % 3 == 0){
-                continue;
-            }
-
-            int x = number;
-            bool hasThree = false;
-
-            while(x > 0){
-                if(x % 10 == 3){
-                    hasThree = true;
-                    break;
-                }
-
-                x /= 10;
-            }
-
-            if(hasThree){
+            if(number % 3 == 0 || number % 10 == 3){
                 continue;
             }
 
