@@ -5,27 +5,26 @@ void solution(){
     int n, h;
     cin >> n >> h;
 
-    int remaining = h;
-    int time = 0;
+    int current = 0;
+    int seconds = 0;
 
     for(int i = 0; i < n; i++){
         int x;
         cin >> x;
 
-        if(x <= remaining){
-            remaining -= x;
+        if(current + x > h){
+            seconds++;
+            current = 0;
         }
-        else{
-            time++;
-            remaining = h - x;
-        }
+
+        current += x;
     }
 
-    if(remaining != h){
-        time++;
+    if(current > 0){
+        seconds++;
     }
 
-    cout << time << '\n';
+    cout << seconds << '\n';
 }
 
 int main() {
