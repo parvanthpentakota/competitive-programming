@@ -2,29 +2,33 @@
 using namespace std;
 
 void solution(){
-    int n, h;
-    cin >> n >> h;
+    long long n, h, k;
+    cin >> n >> h >> k;
 
-    int current = 0;
-    int seconds = 0;
+    long long current = 0;
+    long long ans = 0;
 
     for(int i = 0; i < n; i++){
-        int x;
+        long long x;
         cin >> x;
 
-        if(current + x > h){
-            seconds++;
-            current = 0;
+        if(current + x <= h){
+            current += x;
+        }
+        else{
+            ans++;
+            current = x;
         }
 
-        current += x;
+        ans += current / k;
+        current %= k;
     }
 
     if(current > 0){
-        seconds++;
+        ans++;
     }
 
-    cout << seconds << '\n';
+    cout << ans << '\n';
 }
 
 int main() {
